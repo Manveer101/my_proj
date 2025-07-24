@@ -3,10 +3,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 
 
-# 🔐 Signup Serializer
+# Signup Serializer
 class SignupSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
-    password2 = serializers.CharField(write_only=True, required=True)  # Confirm Password (optional but good UX)
+    password2 = serializers.CharField(write_only=True, required=True)
 
     class Meta:
         model = User
@@ -30,7 +30,7 @@ class SignupSerializer(serializers.ModelSerializer):
         return user
 
 
-# 🔐 Change Password Serializer
+# Change Password Serializer
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True, validators=[validate_password])
