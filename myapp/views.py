@@ -107,7 +107,7 @@ class PasswordResetConfirmView(generics.GenericAPIView):
         return Response({'message': 'Password has been reset successfully.'})
 
 
-#  Generic Authenticated Test View (Optional)
+# Authenticated Test View
 class MyProtectedView(APIView):
     permission_classes = [IsAuthenticated]
     
