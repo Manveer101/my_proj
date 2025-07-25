@@ -21,7 +21,7 @@ class SignupSerializer(serializers.ModelSerializer):
         return attrs
 
     def create(self, validated_data):
-        validated_data.pop('password2')  # Remove confirm password
+        validated_data.pop('password2')
         user = User.objects.create_user(
             username=validated_data['username'],
             email=validated_data['email'],
