@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv("postgresql://blogapp_83me_user:7L6nXv2K9BGeEeLzOYcmbBrd7uTQIVda@dpg-d21ned7fte5s73fr3no0-a/blogapp_83me"))
+    'default': dj_database_url.config(default=os.getenv("DATABASE_URL"))
 }
 
 
