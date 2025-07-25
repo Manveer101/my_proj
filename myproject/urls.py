@@ -35,3 +35,9 @@ urlpatterns += [
     path('reset-password-request/', PasswordResetRequestView.as_view(), name='reset-password-request'),
     path('reset-password-confirm/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name='reset-password-confirm'),
 ]
+
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
