@@ -3,10 +3,7 @@ name = "djangoproject"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Manveer Singh"}
-]
-packages = [
-    { include = "myproject" }
+    {name = "Your Name",email = "you@example.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
@@ -18,11 +15,11 @@ dependencies = [
     "djangorestframework-simplejwt (>=5.5.0,<6.0.0)",
     "django-filter (>=25.1,<26.0)",
     "gunicorn (>=23.0.0,<24.0.0)",
-    "dj-database-url (>=3.0.1,<4.0.0)"
+    "dj-database-url (>=3.0.1,<4.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)"
 ]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
-package-mode = false
