@@ -10,6 +10,7 @@ class BlogViewSet(ModelViewSet):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
     permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
 
     # Enable filters, ordering, and search
     filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
