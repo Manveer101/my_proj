@@ -16,7 +16,11 @@ User = get_user_model()
 
 
 #  Signup
+from rest_framework.permissions import AllowAny 
+
 class SignupView(APIView):
+    permission_classes = [AllowAny] 
+
     def post(self, request):
         serializer = SignupSerializer(data=request.data)
         if serializer.is_valid():
@@ -27,6 +31,7 @@ class SignupView(APIView):
 
 # Login
 class LoginView(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         username = request.data.get("username")
         password = request.data.get("password")
@@ -107,7 +112,7 @@ class PasswordResetConfirmView(generics.GenericAPIView):
         return Response({'message': 'Password has been reset successfully.'})
 
 
-# Authenticated Test View
+#  Generic Authenticated Test View (Optional)
 class MyProtectedView(APIView):
     permission_classes = [IsAuthenticated]
     
