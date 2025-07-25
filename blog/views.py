@@ -4,6 +4,8 @@ from rest_framework.filters import OrderingFilter, SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Blog
 from .serializers import BlogSerializer
+from rest_framework.authentication import TokenAuthentication
+
 
 
 class BlogViewSet(ModelViewSet):
