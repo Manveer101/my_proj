@@ -11,9 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o=xw+g=kr@wp0!@o7@2vzk(p%#8)2cyt7a1tuabjcl1%ubsrv*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -64,12 +65,10 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+import dj_database_url
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default=os.getenv("postgresql://blogapp_83me_user:7L6nXv2K9BGeEeLzOYcmbBrd7uTQIVda@dpg-d21ned7fte5s73fr3no0-a/blogapp_83me"))
 }
 
 
@@ -139,3 +138,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
+
+# At bottom of settings.py
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
