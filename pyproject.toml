@@ -13,7 +13,9 @@ dependencies = [
     "django-urls (>=1.1.4,<2.0.0)",
     "django-shortcuts (>=1.6,<2.0)",
     "djangorestframework-simplejwt (>=5.5.0,<6.0.0)",
-    "django-filter (>=25.1,<26.0)"
+    "django-filter (>=25.1,<26.0)",
+    "gunicorn (>=23.0.0,<24.0.0)",
+    "dj-database-url (>=3.0.1,<4.0.0)"
 ]
 
 
